@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity implements IMainActivity
         setContentView(R.layout.activity_main);
         mProgressBar = findViewById(R.id.progress_bar);
 
-        loadFragment(HomeFragment.newInstance(), true);
+        if(savedInstanceState == null){
+            loadFragment(HomeFragment.newInstance(), false);
+        }
     }
 
     private void loadFragment(Fragment fragment, boolean lateralMovement){
